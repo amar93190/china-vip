@@ -60,14 +60,6 @@
        HERO
   ═══════════════════════════ -->
   <section id="hero">
-    <img
-      src="https://images.unsplash.com/photo-1716643863806-989dd76ae093?auto=format&fit=crop&w=1920&q=80"
-      alt="Atelier de production industriel en Chine"
-      class="hero-photo"
-      loading="eager"
-      fetchpriority="high"
-    />
-    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-body">
       <p class="hero-location">Guangzhou &nbsp;·&nbsp; Shenzhen &nbsp;·&nbsp; Foshan</p>
       <h1 class="hero-title">
@@ -100,7 +92,7 @@
   <section id="agence">
     <div class="agence-inner">
 
-      <div class="agence-numbers reveal">
+      <div class="agence-numbers reveal-left">
         <div class="agence-stat">
           <div class="agence-num">18</div>
           <div class="agence-label">ans sur le terrain</div>
@@ -117,7 +109,7 @@
         </div>
       </div>
 
-      <div class="agence-text reveal">
+      <div class="agence-text reveal-right">
         <p class="agence-eyebrow">L'agence</p>
         <h2 class="agence-title">Agency China<br>Access VIP</h2>
         <p>On fait ça depuis 2006. Pas depuis un bureau à Paris — depuis les districts industriels de Guangzhou, Shenzhen et Foshan. Notre équipe vit là-bas, connaît les usines, les bons interlocuteurs, et les prix réels.</p>
@@ -198,79 +190,92 @@
         <h2 class="offres-title">Trois formules,<br>un seul objectif</h2>
       </div>
 
-      <div class="offer-row reveal">
-        <div class="offer-row__left">
-          <span class="offer-num">01</span>
-          <div>
-            <h3 class="offer-name">Découverte</h3>
-            <p class="offer-type">Groupe</p>
-          </div>
-        </div>
-        <div class="offer-row__body">
-          <p>Une semaine en groupe à Guangzhou, Shenzhen et Foshan. On vous emmène sur les marchés, dans les usines, on vous présente les bons interlocuteurs. Idéal pour une première fois ou pour explorer un secteur.</p>
-          <ul class="offer-list">
-            <li>Accompagnement aux achats &amp; conseils personnalisés</li>
-            <li>Orientation vers des fournisseurs vérifiés</li>
-            <li>Stratégie d'achat adaptée à votre projet</li>
-          </ul>
-          <a href="#contact" class="offer-cta">
-            Réserver
-          </a>
-        </div>
-        <div class="offer-row__price">
-          <span class="offer-price">890€</span>
-          <span class="offer-period">/ semaine</span>
-        </div>
-      </div>
+      <div class="offers-grid">
 
-      <div class="offer-row reveal">
-        <div class="offer-row__left">
-          <span class="offer-num">02</span>
-          <div>
-            <h3 class="offer-name">Accompagnement</h3>
-            <p class="offer-type">& Communauté</p>
+        <div class="offer-card reveal-scale">
+          <div class="offer-card__accent"></div>
+          <div class="offer-card__inner">
+            <div class="offer-card__head">
+              <span class="offer-num">01</span>
+              <div>
+                <h3 class="offer-name">Découverte</h3>
+                <p class="offer-type">Groupe</p>
+              </div>
+            </div>
+            <div class="offer-card__body">
+              <p>Une semaine en groupe à Guangzhou, Shenzhen et Foshan. On vous emmène sur les marchés, dans les usines, on vous présente les bons interlocuteurs. Idéal pour une première fois ou pour explorer un secteur.</p>
+              <ul class="offer-list">
+                <li>Accompagnement aux achats &amp; conseils personnalisés</li>
+                <li>Orientation vers des fournisseurs vérifiés</li>
+                <li>Stratégie d'achat adaptée à votre projet</li>
+              </ul>
+            </div>
+            <div class="offer-card__foot">
+              <div class="offer-price-block">
+                <span class="offer-price">890€</span>
+                <span class="offer-period">/ semaine</span>
+              </div>
+              <a href="#contact" class="offer-cta">Réserver</a>
+            </div>
           </div>
         </div>
-        <div class="offer-row__body">
-          <p>Une semaine avec visites d'usines sélectionnées, traduction sur place et aide à la négociation. Vous intégrez aussi notre groupe privé VIP et recevez 3 mois d'accès à l'e-book sourcing.</p>
-          <ul class="offer-list">
-            <li>Visites d'usines triées &amp; mise en relation directe</li>
-            <li>Traduction, négociation, contrôle qualité</li>
-            <li>Groupe privé + e-book (puis 7,90€/mois)</li>
-          </ul>
-          <a href="#contact" class="offer-cta">
-            Réserver
-          </a>
-        </div>
-        <div class="offer-row__price">
-          <span class="offer-price">1 590€</span>
-          <span class="offer-period">/ semaine</span>
-        </div>
-      </div>
 
-      <div class="offer-row offer-row--vip reveal">
-        <div class="offer-row__left">
-          <span class="offer-num offer-num--vip">03</span>
-          <div>
-            <h3 class="offer-name">VIP Premium</h3>
-            <p class="offer-type">Haut de gamme</p>
+        <div class="offer-card reveal-scale reveal-delay-1">
+          <div class="offer-card__accent"></div>
+          <div class="offer-card__inner">
+            <div class="offer-card__head">
+              <span class="offer-num">02</span>
+              <div>
+                <h3 class="offer-name">Accompagnement</h3>
+                <p class="offer-type">&amp; Communauté</p>
+              </div>
+            </div>
+            <div class="offer-card__body">
+              <p>Une semaine avec visites d'usines sélectionnées, traduction sur place et aide à la négociation. Vous intégrez aussi notre groupe privé VIP et recevez 3 mois d'accès à l'e-book sourcing.</p>
+              <ul class="offer-list">
+                <li>Visites d'usines triées &amp; mise en relation directe</li>
+                <li>Traduction, négociation, contrôle qualité</li>
+                <li>Groupe privé + e-book (puis 7,90€/mois)</li>
+              </ul>
+            </div>
+            <div class="offer-card__foot">
+              <div class="offer-price-block">
+                <span class="offer-price">1 590€</span>
+                <span class="offer-period">/ semaine</span>
+              </div>
+              <a href="#contact" class="offer-cta">Réserver</a>
+            </div>
           </div>
         </div>
-        <div class="offer-row__body">
-          <p>10 jours minimum, 100% sur mesure. On gère tout — sélection des usines, négociation directe, contrôle qualité, suivi de production, logistique. Disponibilité 7j/7 pendant votre séjour. Un an d'accès e-book offert.</p>
-          <ul class="offer-list">
-            <li>Accompagnement personnalisé de A à Z</li>
-            <li>Négociation directe &amp; contrôle qualité renforcé</li>
-            <li>Suivi logistique &amp; 1 an d'accès VIP offert</li>
-          </ul>
-          <a href="#contact" class="offer-cta offer-cta--vip">
-            Réserver
-          </a>
+
+        <div class="offer-card offer-card--vip reveal-scale reveal-delay-2">
+          <div class="offer-card__accent"></div>
+          <div class="offer-card__inner">
+            <div class="offer-card__head">
+              <span class="offer-num offer-num--vip">03</span>
+              <div>
+                <h3 class="offer-name">VIP Premium</h3>
+                <p class="offer-type">Haut de gamme</p>
+              </div>
+            </div>
+            <div class="offer-card__body">
+              <p>10 jours minimum, 100% sur mesure. On gère tout — sélection des usines, négociation directe, contrôle qualité, suivi de production, logistique. Disponibilité 7j/7 pendant votre séjour.</p>
+              <ul class="offer-list">
+                <li>Accompagnement personnalisé de A à Z</li>
+                <li>Négociation directe &amp; contrôle qualité renforcé</li>
+                <li>Suivi logistique &amp; 1 an d'accès VIP offert</li>
+              </ul>
+            </div>
+            <div class="offer-card__foot">
+              <div class="offer-price-block">
+                <span class="offer-price">3 490€</span>
+                <span class="offer-period">10 jours +</span>
+              </div>
+              <a href="#contact" class="offer-cta offer-cta--vip">Réserver</a>
+            </div>
+          </div>
         </div>
-        <div class="offer-row__price">
-          <span class="offer-price offer-price--vip">3 490€</span>
-          <span class="offer-period">10 jours +</span>
-        </div>
+
       </div>
 
     </div>
@@ -321,7 +326,7 @@
   <section id="contact">
     <div class="contact-inner">
 
-      <div class="contact-info reveal">
+      <div class="contact-info reveal-left">
         <p class="section-label section-label--light">Prêt à vous lancer ?</p>
         <h2 class="contact-title">Développez votre<br>business en Chine.</h2>
         <p class="contact-sub">Places limitées par session — on travaille en petit groupe pour garantir la qualité.</p>
@@ -329,7 +334,7 @@
       </div>
 
       <form
-        class="contact-form reveal reveal-delay-1"
+        class="contact-form reveal-right reveal-delay-1"
         id="contact-form"
         action="https://formspree.io/f/VOTRE_ID"
         method="POST"

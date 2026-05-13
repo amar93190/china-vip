@@ -1,8 +1,8 @@
 /* ============================================================
-   OFFRES — Présentation éditoriale (rangées, pas de cards)
+   OFFRES — Cartes
    ============================================================ */
 #offres {
-  background: var(--white);
+  background: var(--cream);
   padding: 100px 60px;
   border-top: 3px solid var(--red);
 }
@@ -10,9 +10,8 @@
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .offres-header {
-  margin-bottom: 60px;
+  margin-bottom: 56px;
 }
 .offres-title {
   font-family: var(--f-display);
@@ -22,43 +21,74 @@
   color: var(--ink);
 }
 
-/* ── Rangée d'offre ── */
-.offer-row {
+/* ── Grille ── */
+.offers-grid {
   display: grid;
-  grid-template-columns: 220px 1fr 160px;
-  gap: 48px;
-  align-items: start;
-  padding: 48px 0;
-  border-top: 1px solid var(--cream-2);
-  transition: background var(--t);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
-.offer-row:last-child { border-bottom: 1px solid var(--cream-2); }
 
-/* Numéro + titre */
-.offer-row__left {
+/* ── Carte ── */
+.offer-card {
+  background: var(--white);
+  border: 1px solid var(--cream-2);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(26,26,46,0.10);
+}
+
+/* Barre de couleur en haut */
+.offer-card__accent {
+  height: 4px;
+  background: var(--cream-2);
+  flex-shrink: 0;
+  transition: background 0.35s ease;
+}
+.offer-card:hover .offer-card__accent { background: var(--red); }
+
+/* Corps de la carte */
+.offer-card__inner {
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* En-tête */
+.offer-card__head {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding-top: 4px;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cream-2);
 }
 .offer-num {
   font-family: var(--f-display);
-  font-size: 52px;
+  font-size: 50px;
   line-height: 1;
   color: var(--cream-2);
   flex-shrink: 0;
-  transition: color var(--t);
+  transition: color 0.35s ease;
 }
-.offer-row:hover .offer-num { color: var(--red); }
+.offer-card:hover .offer-num { color: var(--red); }
 .offer-num--vip { color: var(--gold) !important; }
 
 .offer-name {
   font-family: var(--f-display);
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 1px;
   color: var(--ink);
-  margin-bottom: 4px;
   line-height: 1;
+  margin-bottom: 5px;
 }
 .offer-type {
   font-family: var(--f-sans);
@@ -69,24 +99,27 @@
   color: var(--red);
 }
 
-/* Corps */
-.offer-row__body p {
-  font-size: 14px;
+/* Contenu (flex: 1 pour aligner tous les pieds) */
+.offer-card__body {
+  flex: 1;
+  margin-bottom: 24px;
+}
+.offer-card__body p {
+  font-size: 13px;
   line-height: 1.8;
   color: var(--text-dim);
   margin-bottom: 16px;
 }
 .offer-list {
   list-style: none;
-  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 .offer-list li {
   font-size: 13px;
   color: var(--text-dim);
-  padding-left: 14px;
+  padding-left: 16px;
   position: relative;
 }
 .offer-list li::before {
@@ -97,43 +130,27 @@
   font-size: 11px;
 }
 
-.offer-cta {
-  display: inline-flex;
+/* Pied : prix + bouton */
+.offer-card__foot {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: var(--red);
-  color: #fff;
-  font-family: var(--f-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 12px 22px;
-  border-radius: var(--r);
-  text-decoration: none;
-  transition: background var(--t);
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cream-2);
 }
-.offer-cta:hover { background: var(--red-dark); }
-.offer-cta--vip {
-  background: var(--ink);
-}
-.offer-cta--vip:hover { background: var(--navy); }
-
-/* Prix */
-.offer-row__price {
-  text-align: right;
-  padding-top: 4px;
+.offer-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
 }
 .offer-price {
-  display: block;
   font-family: var(--f-display);
-  font-size: 44px;
+  font-size: 36px;
   letter-spacing: -1px;
   color: var(--ink);
   line-height: 1;
-  margin-bottom: 4px;
 }
-.offer-price--vip { color: var(--gold); }
 .offer-period {
   font-family: var(--f-sans);
   font-size: 11px;
@@ -141,28 +158,57 @@
   letter-spacing: 1px;
   color: var(--text-dim);
 }
-
-/* Rangée VIP — légèrement mise en avant */
-.offer-row--vip {
-  background: var(--cream);
-  margin: 0 -24px;
-  padding: 48px 24px;
-  border-radius: 2px;
-  border-top: none;
-  border-bottom: none;
-  position: relative;
+.offer-cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 11px 18px;
+  border-radius: var(--r);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--t), transform var(--t);
+  flex-shrink: 0;
 }
-.offer-row--vip::before {
+.offer-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+/* ── Carte VIP ── */
+.offer-card--vip {
+  background: var(--navy);
+  border-color: transparent;
+}
+.offer-card--vip .offer-card__accent { background: var(--gold); }
+.offer-card--vip:hover .offer-card__accent { background: var(--gold); }
+.offer-card--vip:hover { box-shadow: 0 24px 60px rgba(10,18,30,0.45); }
+.offer-card--vip .offer-card__head  { border-bottom-color: rgba(240,234,224,0.1); }
+.offer-card--vip .offer-card__foot  { border-top-color: rgba(240,234,224,0.1); }
+.offer-card--vip .offer-name        { color: #fff; }
+.offer-card--vip .offer-type        { color: var(--gold); }
+.offer-card--vip .offer-card__body p { color: rgba(240,234,224,0.72); }
+.offer-card--vip .offer-list li     { color: rgba(240,234,224,0.72); }
+.offer-card--vip .offer-list li::before { color: var(--gold); }
+.offer-card--vip .offer-price       { color: var(--gold); }
+.offer-card--vip .offer-period      { color: rgba(240,234,224,0.5); }
+.offer-card--vip::after {
   content: 'VIP';
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 18px; right: 18px;
   font-family: var(--f-sans);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: 4px;
   color: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 3px 10px;
+  border: 1px solid rgba(201,151,42,0.45);
+  padding: 3px 9px;
   border-radius: var(--r);
 }
+.offer-cta--vip {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+.offer-cta--vip:hover { background: #b8872a; }

@@ -5,7 +5,7 @@
   'use strict';
 
   /* Scroll reveal */
-  var els = document.querySelectorAll('.reveal');
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
   if (!('IntersectionObserver' in window)) {
     els.forEach(function (el) { el.classList.add('visible'); });

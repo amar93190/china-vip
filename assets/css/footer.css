@@ -1,7 +1,7 @@
 /* ============================================================
    FOOTER
    ============================================================ */
-footer {
+body > footer {
   background: var(--navy);
   padding: 60px 60px 28px;
   border-top: 3px solid var(--red);
