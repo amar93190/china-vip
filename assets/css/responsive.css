@@ -1,0 +1,65 @@
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* ── Tablette ── */
+@media (max-width: 1024px) {
+  #navbar, #navbar.scrolled { padding: 16px 36px; }
+  #agence  { padding: 80px 36px; }
+  #offres  { padding: 80px 36px; }
+  #temoignages { padding: 80px 36px; }
+  #contact { padding: 80px 36px; }
+  footer   { padding: 52px 36px 24px; }
+  .hero-scroll { left: 36px; }
+  .tagline-bar { padding: 16px 36px; }
+
+  .agence-inner { grid-template-columns: 1fr 280px; gap: 48px; }
+  .contact-inner { gap: 48px; }
+  .agence-numbers { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; }
+  .agence-rule { display: none; }
+  .agence-text { grid-column: 1 / -1; }
+  .agence-photo { grid-column: 2; grid-row: 1; margin-top: 0; }
+
+  .offer-row { grid-template-columns: 1fr; gap: 24px; }
+  .offer-row__price { text-align: left; }
+
+  .footer-inner  { grid-template-columns: 1fr; gap: 40px; }
+  .footer-cols   { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  #navbar, #navbar.scrolled { padding: 14px 20px; }
+  nav   { display: none; }
+  .hamburger { display: flex; }
+
+  #agence, #offres, #temoignages, #contact { padding: 64px 20px; }
+  footer { padding: 48px 20px 20px; }
+  .tagline-bar { padding: 14px 20px; gap: 12px; }
+  .hero-scroll { display: none; }
+
+  .dest-strip { grid-template-columns: 1fr; }
+  .dest-item  { height: 55vw; min-height: 260px; }
+  .dest-item + .dest-item { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  .dest-desc  { opacity: 1; transform: none; }
+
+  .agence-numbers { gap: 20px; }
+  .agence-num { font-size: 56px; }
+  .agence-inner { grid-template-columns: 1fr; }
+  .agence-photo { grid-column: auto; grid-row: auto; }
+  .agence-photo img { aspect-ratio: 16 / 10; }
+
+  .offres-inner { padding: 0; }
+  .offer-row--vip { margin: 0; padding: 40px 0; }
+
+  .footer-cols { grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero-title  { font-size: 46px; }
+  .contact-title { font-size: 38px; }
+  .footer-cols { grid-template-columns: 1fr; }
+}

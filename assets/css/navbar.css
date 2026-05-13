@@ -1,0 +1,150 @@
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 22px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.35s, padding 0.35s, border-color 0.35s;
+  border-bottom: 1px solid transparent;
+}
+#navbar.scrolled {
+  background: rgba(255,255,255,0.97);
+  border-bottom-color: var(--cream-2);
+  padding: 14px 60px;
+  backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--red);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-display);
+  font-size: 18px;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 1px;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-text span:first-child {
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--ink);
+}
+.logo-vip {
+  font-family: var(--f-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gold) !important;
+}
+/* Sur hero (avant scroll) : logo en blanc */
+#navbar:not(.scrolled) .logo-text span:first-child { color: #fff; }
+#navbar:not(.scrolled) .logo-badge { background: #fff; color: var(--red); }
+
+/* Liens nav */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+nav a {
+  font-family: var(--f-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  transition: color var(--t);
+}
+#navbar.scrolled nav a { color: var(--ink-2); }
+nav a:hover { color: var(--red) !important; }
+
+.nav-cta {
+  background: var(--red);
+  color: #fff !important;
+  padding: 9px 20px;
+  border-radius: var(--r);
+  font-weight: 700 !important;
+  transition: background var(--t) !important;
+}
+.nav-cta:hover { background: var(--red-dark) !important; color: #fff !important; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.28s;
+}
+#navbar.scrolled .hamburger span { background: var(--ink); }
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Menu mobile */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--f-display);
+  font-size: 40px;
+  letter-spacing: 3px;
+  color: #fff;
+  text-decoration: none;
+  transition: color var(--t);
+}
+.mobile-menu a:hover { color: var(--red); }
+.mobile-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: color var(--t);
+}
+.mobile-close:hover { color: #fff; }
